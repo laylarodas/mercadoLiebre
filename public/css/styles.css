@@ -96,7 +96,7 @@ header {display:block;width: 100%; background-color: #EAC926;}
 
 .div-button-register{display: block;text-align: center;}
 
-.button-form{padding:10px 15px;border-radius: 5px;border: none;color: white;background-color:#03264C;width: 15%;}
+.button-form{padding:10px 15px;border-radius: 5px;border: none;color: white;background-color:#03264C;width: 90px;}
 
 .button-form:hover{
     background-color: #0022AA;
