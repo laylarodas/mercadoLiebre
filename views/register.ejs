@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {title: 'Register'}) %>
+<body>
+    <%- include('partials/header') %>
+    <main id="main-register">
+        <form action="/" method="GET" class="create-form">
+            <div class="control-form">
+                <label for="nombreCompleto">Nombre Completo</label>
+                <input id="nombreCompleto" type="text" name="nombre" class="control" placeholder="Nombre y apellido">
+            </div>
+            <div class="control-form">
+                <label for="usuario">Usuario</label>
+                <input id="usuario" type="text" name="usuario" class="control" placeholder="Nombre de usuario">
+            </div>
+            <div class="control-form">
+                <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                <input id="fechaNacimiento" type="date" name="date" class="control">
+            </div>
+            <div class="control-form">
+                <label for="text">Domicilio</label>
+                <input id="domicilio" type="text" name="domicilio" class="control" placeholder="Ingrese su domicilio">
+            </div>
+            <div class="control-form">
+                <label>Perfil del Usuario</label>
+                <input type="radio" name="perfil"> Comprador
+                <input type="radio" name="perfil"> Vendedor
+            </div>
+            <div class="control-form">
+                <label>Intereses</label>
+                <input type="checkbox" name="intereses" > Electro<label></label>
+                <input type="checkbox" name="intereses"> Moda<label></label>
+                <input type="checkbox" name="intereses"> Hogar<label></label>
+                <input type="checkbox" name="intereses"> Jugueteria<label></label>
+                <input type="checkbox" name="intereses"> Vida sana<label></label>
+            </div>
+            <div class="control-form">
+                <label>Elegí una foto de usuario</label>
+                <input type="file"  name="avatar" accept=".jpg" multiple>
+            </div>
+            <div class="control-form">
+                <label>Contraseña</label>
+                <input type="password" name="password" class="control">
+            </div>
+            <div class="control-form">
+                <label>Confirmar contraseña</label>
+                <input type="password" name="password" class="control">
+            </div>
+            <div class="div-button-register">
+                <button type="submit" class="button-form">Enviar</button>
+                <button type="reset" class="button-form">Borrar</button>
+            </div>
+
+
+        </form>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

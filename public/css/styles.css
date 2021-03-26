@@ -38,13 +38,14 @@ header {display:block;width: 100%; background-color: #EAC926;}
 
 #search-bar{width: 50%; text-align: center;}
 
-.design-search{width: 70%;border: none;padding: 8px;}
+.design-search{width: 70%;border: none;padding: 8px;font-size: 14px;}
 
 
 .button-search{
     background-color: white;
     border: none;
     padding: 8px;
+    font-size: 14px;
 }
 
 .top-header-p{
@@ -68,11 +69,11 @@ header {display:block;width: 100%; background-color: #EAC926;}
     padding: 15px 15px;
 }
 
-
+/*  banner */
 #img-banner {display: block; width: 100%;}
 
 
-/*  banner */
+
 .img-width{width: 100%;display: block;}
 
 
@@ -87,16 +88,17 @@ header {display:block;width: 100%; background-color: #EAC926;}
     text-align: left;
     background-color: #FFF;
     margin: 15px;
+    border-radius: 8px;
 }
-.control-form{margin-bottom: 15px;}
+.control-form{margin-bottom: 15px;font-size: 16px;}
 
 .control-form label {display: block;font-weight: bold; color: #666;font-size: 16px;padding: 10px;}
 
-.control{width: 100%;border: none; border-bottom: 1px solid #000; padding: 10px;color: #666;}
+.control{width: 100%;border: none; border: 1px solid rgb(119, 115, 115); padding: 10px;color: #666;font-size: 16px;border-radius: 5px;}
 
 .div-button-register{display: block;text-align: center;}
 
-.button-form{padding:10px 15px;border-radius: 5px;border: none;color: white;background-color:#03264C;width: 90px;}
+.button-form{padding:10px 15px;border-radius: 5px;border: none;color: white;background-color:#03264C;width: 90px;font-size: 16px;}
 
 .button-form:hover{
     background-color: #0022AA;
@@ -105,10 +107,10 @@ header {display:block;width: 100%; background-color: #EAC926;}
 /* Login-main */
 
 .main-login{width: 90%; margin: 20px auto;display: block;}
-.design-form{display: block;text-align: center; background-color: #FFF;padding-bottom: 30px;padding-top: 20px;}
+.design-form{display: block;text-align: center; background-color: #FFF;padding-bottom: 30px;padding-top: 20px;border-radius: 8px;}
 .div-form{font-weight: bold;}
 .div-form label{display: block;padding-top: 15px;margin-top: 10px;color: #666;font-size: 18px;}
-.input-control{margin-top: 10px;width: 90%;padding: 10px;border: none; border-bottom: 1px solid #000;font-weight: 100;font-size: 14px;}
+.input-control{margin-top: 10px;width: 90%;padding: 10px;border: none; border: 1px solid rgb(119, 115, 115);font-weight: 100;font-size: 16px;border-radius: 5px;}
 #div-button{padding-top: 20px;padding-bottom: 15px;margin-top: 15px; }
 .design-button{width: 90%;padding: 10px;border-radius: 5px;color: #FFF;font-size: 16px;background-color: #03264C;border: none;}
 
@@ -116,6 +118,11 @@ header {display:block;width: 100%; background-color: #EAC926;}
 
 
 /* Main */
+
+
+#div-products-create-button{display: flex;flex-wrap: wrap;justify-content: space-between;align-items: center;}
+#div-products-create-button a{border:none;padding: 15px;border-radius: 5px;font-size: 14px;font-weight: 500;color: #FFF;background-color: #1259c3;}
+#div-products-create-button a:hover{background-color: #0022AA;}
 
 .main{
     width: 90%;
@@ -130,10 +137,11 @@ h3 {font-size: 24px; padding: 15px;color: #666;}
 
 .article-product{
     background-color: white;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     width: 100%;
 }
 
+.article-product a{text-decoration: none;color: #333;}
 
 .description-product{
     display: flex;
@@ -152,7 +160,7 @@ h3 {font-size: 24px; padding: 15px;color: #666;}
 
 .discount{font-size: 16px; color:#39b54a;flex-grow: 7;}
 
-.name-product{padding-top: 10px;color: #666;width: 100%;}
+.name-product{padding-top: 10px;color: #666;width: 100%;font-size: 14px;}
 
 
 .description-product i{
@@ -196,11 +204,12 @@ h3 {font-size: 24px; padding: 15px;color: #666;}
 
 
 .design-footer{
-    padding: 10px 5px;
+    padding: 30px 25px 15px 25px;
     color:  #666;
     font-weight: 100;
     font-size: 14px;
     background-color: #FFF;
+    text-align: center;
 }
 
 

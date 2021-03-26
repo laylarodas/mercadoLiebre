@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', {title: 'Inicio - Mercado Liebre'}) %> 
+<body>
+    <%- include('partials/header') %> 
+    <section class="banner">
+        <img id="img-banner" src="/img/img-home-banner.jpg" alt="Banner">
+    </section>
+    <main class="main">
+        <section> 
+                <h3 class="grey-color">Basado en tu última visita</h3>
+            
+                <div class="box-products">
+                    <% visited.forEach(product => { 
+                        let finalPrice = product.price - (product.price * product.discount / 100);
+                    %>    
+                    <article class="article-product">
+                        <a href="/products/detail/<%= product.id %>" >
+                            <img src="/img/products/<%= product.image%>" class="img-width" alt="<%= product.name %>">
+                            <div class="description-product">
+                                <i class="fas fa-truck"></i>
+                                <p class="price">$ <%= toThousand(finalPrice.toFixed(0)) %> </p>
+                                <% if(product.discount > 0) { %>
+                                <p class="discount"> <%= product.discount %> % off</p>
+                                <% } %>
+                                <h4 class="hidden-product name-product"><%= product.name %></h4>
+                            </div>
+                        </a>
+                    </article>
+                    <% }) %>
+                </div>
+        </section>
+        <section> 
+            <h3 class="grey-color">Ofertas</h3>
+        
+            <div class="box-products">
+                <% inSale.forEach(product => { 
+                        let finalPrice = product.price - (product.price * product.discount / 100);
+                    %>    
+                    <article class="article-product">
+                        <a href="/products/detail/<%= product.id %>">
+                            <img src="/img/products/<%= product.image%>" class="img-width" alt="<%= product.name %>">
+                            <div class="description-product">
+                                <i class="fas fa-truck"></i>
+                                <p class="price">$ <%= toThousand(finalPrice.toFixed(0)) %> </p>
+                                <% if(product.discount > 0) { %>
+                                <p class="discount"> <%= product.discount %> % off</p>
+                                <% } %>
+                                <h4 class="hidden-product name-product"><%= product.name %></h4>
+                            </div>
+                        </a>
+                    </article>
+                    <% }) %>
+            </div>
+        </section>
+
+    </main>
+
+    <%- include('partials/footer') %> 
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {title: 'Login'}) %>
+<body>
+    <%- include('partials/header') %>
+    <main class="main-login">
+        <form action="" method="GET" class="design-form">
+            <div class="div-form">
+                <label id="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" class="input-control" placeholder="Nombre de usuario">
+            </div>
+            <div class="div-form">
+                <label id="password">Contraseña</label>
+                <input type="password" id="password" name="password" class="input-control" placeholder="Ingrese la contraseña">
+            </div>
+            <div id="div-button">
+                <button type="submit" class="design-button">Enviar</button>
+            </div>
+            
+        </form>
+
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

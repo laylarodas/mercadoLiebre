@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head',{title: product.name})  %> 
+<body>
+    <%- include('partials/header')  %>
+    <main>
+        <div class="container products-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="products-title">Detalle del producto: <%= product.name %> </h2>
+                </div>
+            </div>
+            <div class="product-detail">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <img src="/img/products/<%= product.image %> " alt="<%= product.name %>" class="product-detail-img">
+                        <p class="product-detail-description">
+                            <%= product.description %> 
+                        </p>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <article class="product-detail-info">
+                            <h2 class="product-detail-title"><%= product.name %></h2>
+                            <% let finalPrice = toThousand((product.price - (product.price * product.discount / 100)).toFixed(0));%>
+                                <% if (product.discount > 0) { 	%>
+                                    <!-- Si el producto tiene descuento, muestra lo de abajo-->
+                                    <p class="product-detail-price small">
+                                        <span><%= toThousand(product.price) %></span>
+                                        /
+                                        <b><%= product.discount %>% OFF</b>
+                                    </p>
+                                    <p class="product-detail-price">
+                                        $ <%= finalPrice %>
+                                    </p>
+                                <% } else {  %>
+                                    <!-- si no, muestra el precio --> 
+                                    <p class="product-detail-price">
+                                        $<%= finalPrice %> 
+                                    </p>
+                                <% } %>
+                                
+                                
+    
+                            <ul class="actions-list">
+                                <li>
+                                    <i class="fas fa-credit-card"></i>
+                                    <p>Pagá en 12 cuotas sin interes</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-store"></i>
+                                    <p>Retiro gratis en locales del vendedor</p>
+                                </li>
+                            </ul>
+    
+                            <a href="#" class="buy-now-button">COMPRAR AHORA</a>
+                            <hr>
+    
+                            <a href="/products/edit/<%= product.id %>" class="action-button edit">EDITAR PRODUCTO</a>
+                            <form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                                <button type="submit" class="action-button delete">ELIMINAR</button>
+                            </form>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /product detail -->
+
+    </main>
+    <%- include('partials/footer') %> 
+</body>
+</html>

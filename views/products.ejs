@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', {title: 'Todos los productos - Mercado Liebre'}) %> 
+<body>
+    <%- include('partials/header') %>
+    <main class="main">
+        <section> 
+            <div id="div-products-create-button">
+                <h3 class="grey-color">Todos los productos</h3>
+                <a href="/products/create">CREAR PRODUCTO</a>
+            </div>
+            
+            <div class="box-products">
+                <% products.forEach(product => { 
+                        let finalPrice = product.price - (product.price * product.discount / 100);
+                %>    
+                    <article class="article-product">
+                        <a href="/products/detail/<%= product.id %>">
+                            <img src="/img/products/<%= product.image%>" class="img-width" alt="<%= product.name %>">
+                            <div class="description-product">
+                                <i class="fas fa-truck"></i>
+                                <p class="price">$ <%= toThousand(finalPrice.toFixed(0)) %> </p>
+                                <% if(product.discount > 0) { %>
+                                <p class="discount"> <%= product.discount %> % off</p>
+                                <% } %>
+                                <h4 class="hidden-product name-product"><%= product.name %></h4>
+                            </div>
+                        </a>
+                    </article>
+                <% }) %>
+            </div>
+        </section>
+   
+    </main>
+
+    <%- include('partials/footer') %> 
+</body>
+</html>
