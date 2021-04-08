@@ -123,7 +123,8 @@ header {display:block;width: 100%; background-color: #EAC926;}
 .design-button{width: 90%;padding: 10px;border-radius: 5px;color: #FFF;font-size: 16px;background-color: #03264C;border: none;}
 
 .design-button:hover{background-color: #0022AA;}
-
+.remmemberUser{margin-top: 15px;}
+.remmemberUser label{font-size: 14px;}
 
 /* profile main*/
 .main-profile{margin: 20px;}

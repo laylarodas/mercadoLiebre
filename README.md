@@ -9,6 +9,12 @@ Proyecto Integrador, abarca los temas:
 - Posicionamiento avanzado con Flexbox.  
 - Formularios.  
 - Animando elementos.  
+- Diseño MVC.  
+- Motor de templates.  
+- CRUD.  
+- Middlewares.  
+- Session y Cookies.  
+
 
 
 ### Sitio web:  
