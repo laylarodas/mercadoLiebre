@@ -4,54 +4,89 @@
 <body>
     <%- include('partials/header') %>
     <main id="main-register">
-        <form action="/" method="GET" class="create-form">
+        <!--<% if (locals.errors) { %>
+            <% for( let oneError in errors) { %>
+              <p> <%= errors[oneError].msg %> </p>
+            <% } %>
+          <% } %> -->
+        <form action="/user/register" method="POST" enctype="multipart/form-data" class="create-form">
             <div class="control-form">
-                <label for="nombreCompleto">Nombre Completo</label>
-                <input id="nombreCompleto" type="text" name="nombre" class="control" placeholder="Nombre y apellido">
+                <label>Nombre Completo</label>
+                <input id="nombreCompleto" type="text" name="fullName" class="control" placeholder="Nombre y apellido" value="<%= locals.oldData ? oldData.fullName : null %>">
+                <% if (locals.errors && errors.fullName) { %>
+                    <div class="text-danger"> <%= errors.fullName.msg %>  </div>
+                  <% } %>
             </div>
             <div class="control-form">
-                <label for="usuario">Usuario</label>
-                <input id="usuario" type="text" name="usuario" class="control" placeholder="Nombre de usuario">
+                <label>Usuario</label>
+                <input id="usuario" type="text" name="userName" class="control" placeholder="Nombre de usuario" value="<%= locals.oldData ? oldData.userName : null %>">
+                <% if (locals.errors && errors.userName) { %>
+                    <div class="text-danger"> <%= errors.userName.msg %>  </div>
+                  <% } %>
             </div>
             <div class="control-form">
                 <label for="fechaNacimiento">Fecha de Nacimiento</label>
                 <input id="fechaNacimiento" type="date" name="date" class="control">
+                <% if (locals.errors && errors.date) { %>
+                    <div class="text-danger"> <%= errors.date.msg %>  </div>
+                  <% } %>
             </div>
             <div class="control-form">
                 <label for="text">Domicilio</label>
-                <input id="domicilio" type="text" name="domicilio" class="control" placeholder="Ingrese su domicilio">
+                <input id="domicilio" type="text" name="address" class="control" placeholder="Ingrese su domicilio" value="<%= locals.oldData ? oldData.address : null %>">
+                <% if (locals.errors && errors.address) { %>
+                    <div class="text-danger"> <%= errors.address.msg %>  </div>
+                  <% } %>
             </div>
             <div class="control-form">
                 <label>Perfil del Usuario</label>
-                <input type="radio" name="perfil"> Comprador
-                <input type="radio" name="perfil"> Vendedor
+                <%
+                    let profiles =['Comprador','Vendedor']
+                %> 
+                <% for( oneProfile of profiles) { %>
+                    <input type="radio" name="profile" value="<%= oneProfile %>" <%= locals.oldData && (oneProfile === oldData.profile) ? 'checked' : null %> > <%= oneProfile %>
+                <% } %>
+                <% if (locals.errors && errors.profile) { %>
+                    <div class="text-danger"> <%= errors.profile.msg %>  </div>
+                  <% } %>
             </div>
             <div class="control-form">
                 <label>Intereses</label>
-                <input type="checkbox" name="intereses" > Electro<label></label>
-                <input type="checkbox" name="intereses"> Moda<label></label>
-                <input type="checkbox" name="intereses"> Hogar<label></label>
-                <input type="checkbox" name="intereses"> Jugueteria<label></label>
-                <input type="checkbox" name="intereses"> Vida sana<label></label>
+                <% 
+                    let categories = ['Electro','Moda','Hogar','Jugueteria','Vida Sana']
+                %> 
+                <% for( oneCategory of categories) { %>
+                    <input type="checkbox" name="category" value="<%= oneCategory %>" <%= locals.oldData && (oneCategory === oldData.category) ? 'checked' : null %> ><%= oneCategory %> <label></label>
+                <% } %>
+                <% if (locals.errors && errors.category) { %>
+                    <div class="text-danger"> <%= errors.category.msg %>  </div>
+                  <% } %>
             </div>
             <div class="control-form">
                 <label>Elegí una foto de usuario</label>
-                <input type="file"  name="avatar" accept=".jpg" multiple>
+                <input type="file"  name="avatar">
+                <% if (locals.errors && errors.avatar) { %>
+                    <div class="text-danger"> <%= errors.avatar.msg %>  </div>
+                  <% } %>
+            </div>
+            <div class="control-form">
+                <label>Email</label>
+                <input type="text" name="email" placeholder="Ingrese un Email" class="control" value="<%= locals.oldData ? oldData.email : null %>">
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger"> <%= errors.email.msg %>  </div>
+                  <% } %>
             </div>
             <div class="control-form">
                 <label>Contraseña</label>
-                <input type="password" name="password" class="control">
-            </div>
-            <div class="control-form">
-                <label>Confirmar contraseña</label>
-                <input type="password" name="password" class="control">
+                <input type="password" name="password" placeholder="Ingrese una contraseña" class="control" >
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger"> <%= errors.password.msg %>  </div>
+                  <% } %>
             </div>
             <div class="div-button-register">
                 <button type="submit" class="button-form">Enviar</button>
                 <button type="reset" class="button-form">Borrar</button>
             </div>
-
-
         </form>
     </main>
     <%- include('partials/footer') %>

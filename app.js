@@ -1,28 +1,36 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const methodOverride =  require('method-override');
+
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+
+app.use(session({
+    secret: "Shh, It' a secret ",
+    resave: false,
+    saveUninitialized: false
+}));
 
 
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname, '/views'));
-
-const publicPath = path.resolve(__dirname, './public');
+app.use(cookieParser());
+//const publicPath = path.resolve(__dirname, './public');
 app.use(express.static('public'));
-
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-
 app.use(methodOverride('_method'));
-
+app.use(userLoggedMiddleware);
 
 const mainRoutes = require('./routes/main');
 const productsRoutes = require('./routes/products');
-
+const usersRoutes = require('./routes/users');
 
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
+app.use('/user', usersRoutes);
 
 
 app.listen(process.env.PORT || 3000, function(){

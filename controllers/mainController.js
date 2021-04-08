@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-let products = fs.readFileSync('./data/productsDataBase.json', 'utf-8');
-products = JSON.parse(products);
+const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 //const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 
@@ -21,14 +21,6 @@ const mainController = {
         const visited = products.filter(product => product.category == 'visited');
 
         res.render('home',{inSale, visited, toThousand});
-    },
-    login: (req,res)=>{
-        //res.sendFile(path.resolve('views/login.html'));
-        res.render('login');
-    },
-    register: (req,res)=>{
-        //res.sendFile(path.resolve('views/register.html'));
-        res.render('register');
     },
     contacto: (req,res) => {
         res.send('contacto');

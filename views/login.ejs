@@ -4,14 +4,21 @@
 <body>
     <%- include('partials/header') %>
     <main class="main-login">
-        <form action="" method="GET" class="design-form">
+        <form action="/user/login" method="POST" class="design-form">
             <div class="div-form">
-                <label id="usuario">Usuario</label>
-                <input type="text" id="usuario" name="usuario" class="input-control" placeholder="Nombre de usuario">
+                <label id="usuario">Email</label>
+                <input type="text" id="usuario" name="email" class="input-control" placeholder="Ingrese el email">
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger"> <%= errors.email.msg %>  </div>
+                <% } %>
             </div>
             <div class="div-form">
                 <label id="password">Contraseña</label>
                 <input type="password" id="password" name="password" class="input-control" placeholder="Ingrese la contraseña">
+            </div>
+            <div>
+                <label>Recordar contraseña</label>
+                <input type="checkbox" name="rememberUser">
             </div>
             <div id="div-button">
                 <button type="submit" class="design-button">Enviar</button>

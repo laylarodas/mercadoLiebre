@@ -26,9 +26,19 @@
         </ul>
         
         <ul class="login-nav">
-            <li><a href="/register">Creá tu cuenta </a><i class="far fa-address-card"></i></li>
-            <li><a href="/login">Ingresá </a><i class="fas fa-sign-in-alt"></i></li>
-            <li><a href="#">Mis compras </a><i class="fas fa-shopping-basket"></i></li>
+            <% if (locals.isLogged) { %>
+                <li class="profile-navbar">
+                    <a href="/user/profile"><img src="/img/avatars/<%= locals.userLogged.avatar %>" alt="Avatar" class="avatar-width"> Hi <%= locals.userLogged.userName %>!</a>
+                    <ul>
+                        <li><a href="/user/profile">Mi cuenta</a></li>
+                        <li><a href="#">Mis compras</a></li>
+                        <li><a href="/user/logout">Logout</a></li>
+                    </ul>
+                </li>
+            <% } else { %>
+                <li><a href="/user/register">Creá tu cuenta </a><i class="far fa-address-card"></i></li>
+                <li><a href="/user/login">Ingresá </a><i class="fas fa-sign-in-alt"></i></li>
+            <% } %> 
         </ul>
 
     </nav>
