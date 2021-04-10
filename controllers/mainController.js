@@ -28,7 +28,7 @@ const mainController = {
     search: (req,res) =>{
         /*
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        //lee los productos del archivo json
+        //lee los productos del archivo json*/
 		let search = req.query.keywords;
         //le asigna a la variable search el valor ingresado en el input search
 		let productsToSearch = products.filter(product => product.name.toLowerCase().includes(search));	//filtra los productos del archivo , comparando el name con el valor ingresado en search
@@ -38,8 +38,8 @@ const mainController = {
 			toThousand,
 		});
         //renderiza la vista results se pasa como el objeto productos con los valores de productsToSearch(productos que coinciden con la bsuqueda, el valor de la variable search, la funcion separador de miles) 
-        */
-        res.send('Buscador de productos');
+        
+        //res.send('Buscador de productos');
     }
     
 }

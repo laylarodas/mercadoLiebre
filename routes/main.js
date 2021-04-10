@@ -8,6 +8,6 @@ router.get('/', mainController.index);
 
 router.get('/contacto', mainController.contacto);
 
-router.get('/search', mainController.search);//no esta creado el metodo
+router.get('/search', mainController.search);
 
 module.exports = router;

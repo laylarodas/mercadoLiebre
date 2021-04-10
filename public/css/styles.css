@@ -39,7 +39,7 @@ header {display:block;width: 100%; background-color: #EAC926;}
 #search-bar{width: 50%; text-align: center;}
 
 .design-search{width: 70%;border: none;padding: 8px;font-size: 14px;}
-
+.without-results{margin: 120px 0;color: #666;text-align: center;}
 
 .button-search{
     background-color: white;
