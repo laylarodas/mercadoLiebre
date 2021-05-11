@@ -10,5 +10,41 @@
   "email": "rodas.layla@gmail.com",
   "password": "$2a$10$dQUTPYlJ43h3uQOZF/BgPOgjoI7S05/YXsC1qbO0S.9ygu2E2s62e",
   "avatar": "1617912786252_img.jpg"
+ },
+ {
+  "id": 2,
+  "fullName": "levi ackerman",
+  "userName": "levi",
+  "date": "1998-12-25",
+  "address": "jujuy 1470",
+  "profile": "Vendedor",
+  "category": "Hogar",
+  "email": "levi@gmail.com",
+  "password": "$2a$10$VTCf71dm1B./XxvLDUHkEOzoz26tqdvjLrYgG2kTXJoF0S6o/G6Uu",
+  "avatar": "1618093512189_img.jpg"
+ },
+ {
+  "id": 3,
+  "fullName": "Mario Jota",
+  "userName": "mario",
+  "date": "1992-03-12",
+  "address": "jujuy 1470",
+  "profile": "Comprador",
+  "category": "Moda",
+  "email": "mariojota@gmail.com",
+  "password": "$2a$10$BYQC/NJT4pINfGUahjeP9O8ORKCBIl6wzEEhk1QIZJR0vo8fPUAAa",
+  "avatar": "1620702977776_img.jpg"
+ },
+ {
+  "id": 4,
+  "fullName": "Claudia Fernandez",
+  "userName": "Claudi",
+  "date": "1992-03-12",
+  "address": "jujuy 1212",
+  "profile": "Vendedor",
+  "category": "Moda",
+  "email": "claudi@gmail.com",
+  "password": "$2a$10$vdm53u5Mqvp609rHCfl/1.2OptiDvvjklbZVBzuQkp725JTon9aWu",
+  "avatar": "1620756649355_img.jpg"
  }
 ]

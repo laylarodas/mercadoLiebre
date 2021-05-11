@@ -37,12 +37,12 @@
  },
  {
   "id": 6,
-  "name": "Aire Acondicionado 3200w Frio / Calor",
-  "description": "AIRE SPLIT 3200W TACA-3200WCHSA/KC FC TCL. Capacidad frio 3200 Watts. Capacidad calor 3300 Watts. Potencia Electrica(W)frio 996. Potencia Electrica(W)calor 1028. Eficiencia energética calor C. Eficiencia energética frio A. Frigorias 2750 UNIDAD INTERIOR. Peso Bruto 10kg. Peso Neto 7 kg",
-  "price": 20999,
-  "discount": 12,
-  "image": "img-aire-acondicionado.jpg",
-  "category": "in-sale"
+  "name": "Notebook Lenovo I3 Intel 8gb Ram ",
+  "price": "36700",
+  "discount": "20",
+  "category": "1 ",
+  "description": "PROCESADOR / CHIPSET. CPU: Intel Core i3(8a generación) 8130U / 2.2 GHz. Velocidad turbo máxima: 3, 4 GHz. Numero de núcleos: Doble núcleo. Cache: 4 MB. Arquitectura de 64 bit: ss. MEMORIA CACHÉ. Tamaño instalada: 4 MB. ALMACENAMIENTO. Interfaz Serial ATA - 600",
+  "image": "img-aire-acondicionado.jpg"
  },
  {
   "id": 7,
@@ -74,7 +74,7 @@
  {
   "id": 10,
   "name": "Mouse Inalámbrico Logitech M280",
-  "description": "Uso más cómodo para la mano derecha gracias a la forma contorneada con recubrimiento de goma blanda. Duración de las pilas hasta 18 meses, gracias al diseño para ahorrar energía.El M280 entra automáticamente en estado de suspensión cuando no se está usando.",
+  "description": ".Uso más cómodo para la mano derecha gracias a la forma contorneada con recubrimiento de goma blanda. Duración de las pilas hasta 18 meses, gracias al diseño para ahorrar energía.El M280 entra automáticamente en estado de suspensión cuando no se está usando",
   "price": 1200,
   "discount": 10,
   "image": "img-mouse-logitech.jpg",

@@ -51,6 +51,7 @@ const usersController = {
         
         if (userToLogin) {
             let okPassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
+            
             if (okPassword) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;

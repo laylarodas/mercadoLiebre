@@ -38,10 +38,9 @@
 							<!--
 								Un condicional, para saber si esta seleccionado o no 
 							-->
-							<option value="in-sale" <%= productToEdit.category=='in-sale' ? 'selected' :''%> >En
-								oferta</option>
-								<option value="visited" <%= productToEdit.category=='visited' ? 'selected' :''%>
-									>Últimos agregados</option>
+							<% categories.forEach(category => { %>
+								<option value="<%= category.id %> " <%= productToEdit.categoryId == category.id ? 'selected' : '' %>><%= category.name %> </option>
+							<% }) %>
 								</select>
 							</div>
 							<div class="col-12">
