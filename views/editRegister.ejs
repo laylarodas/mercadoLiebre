@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head', {title: 'Register'}) %>
+    <%- include('partials/head', {title: 'Edit'}) %>
 <body>
     <%- include('partials/header') %>
     <main id="main-register">
@@ -9,31 +9,31 @@
               <p> <%= errors[oneError].msg %> </p>
             <% } %>
           <% } %> -->
-        <form action="/user/register" method="POST" enctype="multipart/form-data" class="create-form">
+        <form action="/user/update/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="create-form">
             <div class="control-form">
                 <label>Nombre Completo</label>
-                <input id="nombreCompleto" type="text" name="fullName" class="control" placeholder="Nombre y apellido" value="<%= locals.oldData ? oldData.fullName : null %>">
+                <input id="nombreCompleto" type="text" name="fullName" class="control" placeholder="Nombre y apellido" value="<%= userToEdit.fullName %>">
                 <% if (locals.errors && errors.fullName) { %>
                     <div class="text-danger"> <%= errors.fullName.msg %>  </div>
                   <% } %>
             </div>
             <div class="control-form">
                 <label>Usuario</label>
-                <input id="usuario" type="text" name="userName" class="control" placeholder="Nombre de usuario" value="<%= locals.oldData ? oldData.userName : null %>">
+                <input id="usuario" type="text" name="userName" class="control" placeholder="Nombre de usuario" value="<%= userToEdit.userName%>">
                 <% if (locals.errors && errors.userName) { %>
                     <div class="text-danger"> <%= errors.userName.msg %>  </div>
                   <% } %>
             </div>
             <div class="control-form">
                 <label for="fechaNacimiento">Fecha de Nacimiento</label>
-                <input id="fechaNacimiento" type="date" name="date" class="control">
+                <input id="fechaNacimiento" type="date" name="date" class="control" value="<%= userToEdit.date %> ">
                 <% if (locals.errors && errors.date) { %>
                     <div class="text-danger"> <%= errors.date.msg %>  </div>
                   <% } %>
             </div>
             <div class="control-form">
                 <label for="text">Domicilio</label>
-                <input id="domicilio" type="text" name="address" class="control" placeholder="Ingrese su domicilio" value="<%= locals.oldData ? oldData.address : null %>">
+                <input id="domicilio" type="text" name="address" class="control" placeholder="Ingrese su domicilio" value="<%= userToEdit.address %>">
                 <% if (locals.errors && errors.address) { %>
                     <div class="text-danger"> <%= errors.address.msg %>  </div>
                   <% } %>
@@ -41,7 +41,7 @@
             <div class="control-form">
                 <label>Perfil del Usuario</label>
                 <% profiles.forEach(oneProfile => { %>
-                    <input type="radio" name="profileId" value="<%= oneProfile.id %>" <%= locals.oldData && (oneProfile.id === oldData.profileId) ? 'checked' : null %> > <%= oneProfile.name %>
+                    <input type="radio" name="profileId" value="<%= oneProfile.id %> " <%= userToEdit.profileId == oneProfile.id ? 'checked' : null %> > <%= oneProfile.name %>
                 <% }) %>
                 <% if (locals.errors && errors.profileId) { %>
                     <div class="text-danger"> <%= errors.profileId.msg %>  </div>
@@ -50,7 +50,7 @@
             <div class="control-form">
                 <label>Intereses</label>
                 <% categories.forEach(oneCategory => { %>
-                    <input type="checkbox" name="category_user_id" value="<%= oneCategory.id %>" <%= locals.oldData && (oneCategory.id === oldData.category_user_id) ? 'checked' : null %> > <%= oneCategory.name %> <label></label>
+                    <input type="checkbox" name="category_user_id" value="<%= oneCategory.id %> " <%= userToEdit.category_user_id == oneCategory.id ? 'checked' : null %> > <%= oneCategory.name %> <label></label>
                 <% }) %>
                 <% if (locals.errors && errors.category_user_id) { %>
                     <div class="text-danger"> <%= errors.category_user_id.msg %>  </div>
@@ -65,7 +65,7 @@
             </div>
             <div class="control-form">
                 <label>Email</label>
-                <input type="text" name="email" placeholder="Ingrese un Email" class="control" value="<%= locals.oldData ? oldData.email : null %>">
+                <input type="text" name="email" placeholder="Ingrese un Email" class="control" value="<%= userToEdit.email %>">
                 <% if (locals.errors && errors.email) { %>
                     <div class="text-danger"> <%= errors.email.msg %>  </div>
                   <% } %>

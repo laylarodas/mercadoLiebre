@@ -14,6 +14,8 @@ Proyecto Integrador, abarca los temas:
 - CRUD.  
 - Middlewares.  
 - Session y Cookies.  
+- Base de datos MySQL.  
+- Sequelize.
 
 
 

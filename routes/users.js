@@ -13,6 +13,11 @@ const authMiddleware = require('../middlewares/authMiddleware');
 router.get('/register',guestMiddleware,usersController.register);
 router.post('/register',uploadFile.single('avatar'),validations,usersController.processRegister);
 
+/*** EDIT USER ***/
+router.get('/edit/:id', usersController.edit);//VISTA DE FORM DE EDICION DE REGISTRO
+router.put('/update/:id',uploadFile.single('avatar'),validations, usersController.update);//GUARDAR DATOS ACTUALIZADOS
+
+
 router.get('/login',guestMiddleware,usersController.login);
 router.post('/login', usersController.loginProcess);
 

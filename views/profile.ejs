@@ -11,6 +11,9 @@
         <div class="div-email-profile">
             <h2><%= user.email %></h2>
         </div>
+        <div class="div-edit-profile">
+            <a href="/user/edit/<%= user.id %>">EDITAR USUARIO</a>
+        </div>
     </main>
     <%- include('partials/footer') %>
 </body>

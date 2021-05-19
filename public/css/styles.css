@@ -66,6 +66,13 @@ header {display:block;width: 100%; background-color: #EAC926;}
 .div-email-profile{padding: 10px;width: 100%;}
 .div-email-profile h2{border: none; padding: 15px 30px;border-radius: 8px;font-size: 1.2em;color: #FFF;background-color: rgb(248, 69, 37);font-weight: 400;text-align: center;}
 
+.div-edit-profile{
+    padding: 10px;
+    width: 70%;
+}
+.div-edit-profile a{text-decoration: none;border: none; padding: 15px 30px;border-radius: 8px;font-size: 1.2em;color: #FFF;background-color: rgb(39, 175, 6);font-weight: 400;text-align: center;}
+.div-edit-profile a:hover{background-color: rgb(117, 231, 10);}
+
 #burger-menu{
     text-align: center;
     padding-bottom: 15px;

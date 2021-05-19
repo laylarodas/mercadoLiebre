@@ -9,8 +9,8 @@ const validations = [
     body('date').notEmpty().withMessage('Tienes que ingresar fecha de nacimiento'),
     body('email').notEmpty().withMessage('Tienes que escribir un correo electronico').bail().isEmail().withMessage('Debes escribir un formato de correo electronico válido'),
     body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
-    body('profile').notEmpty().withMessage('Tienes que elegir un perfil'),
-    body('category').notEmpty().withMessage('Tienes que elegir intereses'),
+    body('profileId').notEmpty().withMessage('Tienes que elegir un perfil'),
+    body('category_user_id').notEmpty().withMessage('Tienes que elegir intereses'),
     body('avatar').custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = [".jpg", ".png",".gif"];
