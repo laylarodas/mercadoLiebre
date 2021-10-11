@@ -18,6 +18,3 @@ Proyecto Integrador, abarca los temas:
 - Sequelize.
 
 
-
-### Sitio web:  
-[proyecto-mercado](https://proyecto-mercado.herokuapp.com/)
